@@ -4,8 +4,10 @@
   "description": "test task",
   "scripts": {
     "dev": "parcel src/index.pug --open",
-    "build": "parcel build src/index.pug --public-url ./"
+    "build": "rm -rf ./dist && parcel build src/index.pug --public-url ./",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://genexys.github.io/eLearn",
   "author": "Ilya Borisenko",
   "license": "MIT",
   "dependencies": {
