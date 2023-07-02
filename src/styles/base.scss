@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #00634b;
+  --padding: 16px;
+  --header-height: 75px;
+  --height-input: 52px;
+  --primary-color-font: #000;
+  --primary-color-text: #4e4e4e;
+  --border-color: #9a9a9a;
+  --bg-white: #fefdfc;
+  --color-link: #646464;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1457px;
+  margin: 0 auto;
+  padding: 0 var(--padding);
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+}

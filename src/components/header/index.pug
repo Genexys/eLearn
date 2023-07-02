@@ -1,0 +1,23 @@
+.header
+  .container
+    .header__inner
+      .header__logo
+        a.logo__link(href='/')
+          .logo__img
+            img(src='./assets/image/logo.svg', alt='eLearn', title='eLearn')
+      #header-menu.header__menu
+        include ../menu/index.pug
+
+      button.header__button-menu(
+        type='button',
+        aria-label='Open menu',
+        aria-expanded='false',
+        aria-controls='header-menu'
+      )
+        span.screen-reader-text Open menu
+        span.hamburger
+          span.hamburger__box
+            span.hamburger__inner
+      .header__actions
+        .button.button--transparent(type='button') Log in
+        .button.open-registration(type='button') Register

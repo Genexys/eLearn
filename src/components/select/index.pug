@@ -1,0 +1,26 @@
+mixin option(spec)
+  - spec = spec || {};
+  - spec.classNames = spec.classNames || '';
+  - spec.text = spec.text || '';
+
+  li.select-option(class=spec.classNames, role='option')&attributes(attributes)
+    = spec.text
+
+mixin select(spec)
+  - spec = spec || {};
+  - spec.classNames = spec.classNames || '';
+  - spec.trigger = spec.trigger || 'Selected option';
+  - spec.items = spec.items || {};
+  - spec.attr = spec.attr || {};
+
+  .custom-select(class=spec.classNames)&attributes(attributes)
+    .select-trigger(aria-labelledby='select-label')
+      span#select-label.select-trigger__text= spec.trigger
+      span.select-trigger__icon
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 7L7 1L13 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+    ul.select-options(role='listbox')
+      each item in spec.items
+        +option(item)

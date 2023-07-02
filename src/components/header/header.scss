@@ -1,0 +1,135 @@
+.header {
+  $self: &;
+
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: var(--header-height);
+  box-shadow: 0px 4px 20px 0px rgba(217, 217, 217, 0.25);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 1023px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    margin-right: 9.6vw;
+
+    @media screen and (max-width: 1400px) {
+      margin-right: 60px;
+    }
+  }
+
+  &__menu {
+    flex-grow: 1;
+
+    @media screen and (max-width: 1023px) {
+      position: fixed;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__button-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &[aria-expanded='true'] {
+      .hamburger__box {
+        background-color: transparent;
+      }
+
+      .hamburger__inner {
+        opacity: 0;
+      }
+
+      .hamburger__box::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .hamburger__box::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    @media screen and (min-width: 1023px) {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &__box {
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary-color);
+      position: relative;
+      transition: transform 0.3s ease;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: transform 0.3s ease;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+    }
+
+    &__inner {
+      position: absolute;
+      width: 13px;
+      height: 100%;
+      background-color: var(--primary-color);
+      transition: opacity 0.3s ease;
+    }
+  }
+  &__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    .button {
+      margin-left: 24px;
+    }
+  }
+}

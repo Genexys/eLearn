@@ -1,0 +1,32 @@
+{
+  "name": "eLearn",
+  "version": "1.0.0",
+  "description": "test task",
+  "scripts": {
+    "dev": "parcel src/index.pug --open",
+    "build": "parcel build src/index.pug"
+  },
+  "author": "Ilya Borisenko",
+  "license": "MIT",
+  "dependencies": {
+    "scss-reset": "1.4.2"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "sass": {
+    "includePaths": [
+      "./node_modules"
+    ]
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.9.3",
+    "@parcel/transformer-sass": "2.9.3",
+    "@prettier/plugin-pug": "^2.5.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "parcel": "2.9.3",
+    "prettier": "^2.8.8"
+  }
+}

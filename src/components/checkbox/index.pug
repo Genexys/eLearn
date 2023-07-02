@@ -1,0 +1,14 @@
+mixin checkbox(args)
+  .checkbox(class=attributes.class)
+    input.checkbox__field(
+      type='checkbox',
+      name=args.name ? args.name : null,
+      value=args.value ? args.value : null,
+      placeholder=args.placeholder ? args.placeholder : null,
+      id=attributes.id ? attributes.id : null
+    )
+    label.checkbox__label(for=attributes.id ? attributes.id : null)
+    if args.placeholder
+      span.checkbox__text !{ args.placeholder }
+    if args.error
+      span.checkbox__error= args.error

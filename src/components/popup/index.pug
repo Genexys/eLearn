@@ -1,0 +1,11 @@
+include ../input/index.pug
+include ../select/index.pug
+
+#popup-overlay.popup-overlay(
+  aria-hidden='true',
+  aria-labelledby='popup',
+  style='opacity: 0; visibility: hidden'
+)
+#popup-content.popup-content(style='opacity: 0; visibility: hidden')
+  .popup-content__inner
+    block content

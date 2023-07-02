@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding-right: var(--padding);
+  padding-left: var(--padding);
+  border: none;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &--transparent {
+    padding: 0;
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

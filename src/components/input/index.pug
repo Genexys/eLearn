@@ -1,0 +1,17 @@
+mixin input(args)
+  .input(class=attributes.class)
+    input.input__field(
+      type=args.type ? args.type : 'text',
+      name=args.name ? args.name : null,
+      value=args.value ? args.value : null,
+      placeholder=args.placeholder ? args.placeholder : null,
+      id=attributes.id ? attributes.id : null,
+      required=attributes.required ? attributes.required : null
+    )
+    label.input__label(for=attributes.id ? attributes.id : null)= args.placeholder
+    if args.error
+      span.input__error= args.error
+    if args.type === 'password'
+      button.toggle-password.input__button(type='button')
+        span.screen-reader-text Toggle password visibility
+        span.input__button-icon

@@ -1,0 +1,32 @@
+extends ../popup/index.pug
+include ../input/index.pug
+include ../select/index.pug
+include ../checkbox/index.pug
+
+block content
+  .registration
+    .registration__inner
+      .registration__header
+        p.registration__title Registration
+        button.close-popup-button.registration__close(
+          type='button',
+          aria-label='Close popup',
+          aria-controls='popup-overlay'
+        )
+          span.screen-reader-text Close popup
+    form.registration-form
+      +input({ type: 'text', name: 'name', placeholder: 'Name Surname' })(required)
+      +input({ type: 'email', name: 'email', placeholder: 'Email' })(required)
+      +input({ type: 'tel', name: 'phone', placeholder: 'Phone' })(required)
+      +select({classNames: 'input', trigger: 'Where did you find us', items: [ {text: "Google"}, {text: "Linkedin"}, {text: "Facebook"}, {text: 'Instagram'}, {text: 'Twitter'}, {text: 'Other'}]})(
+        tabindex='0'
+      )
+      +input({ type: 'password', name: 'password', placeholder: 'Password' })(required)
+      +input({ type: 'password', name: 'repeat_password', placeholder: 'Confirm password' })(
+        required
+      )
+
+      .registration__agree
+        +checkbox({name: 'repeat_password', placeholder: 'I agree with <a href="#"> Terms and Conditions</a>' })#agree
+
+      button.button.registration__button(type='submit') Register
